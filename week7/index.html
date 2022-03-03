@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--edit the meta tag below to hold YOUR name!-->
-    <meta name="author" content="__YOUR NAME HERE!__">
+    <meta name="author" content="Dakota Rockwell">
     <meta name="description" content="Week 7 Assignment practicing Javascript & HTML">
     <title>Week 7 | Pay Form Calculator Assignment</title>
 </head>
@@ -18,22 +18,22 @@
    <!--each form element is separated by a break space (new line) -->
     <form>
         <label for="first">First Name: </label>
-        <input type="text" id="">
+        <input type="text" id="first name">
 
         <br>
 
         <label for="last">Last Name: </label>
-        <input type="text" id="">
+        <input type="text" id="last name">
 
         <br>
 
         <label for="hours">Hours Worked: </label>
-        <input type="text" id="">
+        <input type="text" id="hours worked">
 
         <br>
 
         <label for="rate">Hourly Rate: </label>
-        <input type="text" id="">
+        <input type="text" id="hourly rate">
 
         <br>
 
@@ -42,7 +42,7 @@
 
 
         <!-- give the button below (that is the only form element without a label) an id of "enter-button"-->
-        <input type="button" id="" value="Enter">
+        <input type="button" id="enter button" value="Enter">
 
         <br>
         <br>
@@ -68,7 +68,7 @@
 
     <script>
         //edit the below statement to select the #enter-button id from the HTML file
-        document.querySelector().addEventListener(`click`, alertName)
+        document.querySelector(`#enter-button`).addEventListener(`click`, alertName)
         
         
 
@@ -82,14 +82,14 @@
             hours --> hours worked, #hours
             rate --> hourly rate, #rate */
             
-
+            info.innerHTML = `<br> Here is the information you entered <br><br>Your First Name: ${first.value} <br><br>Your Last Name: ${(last.value).toFixed(1)} <br><br> Your Hours Worked: ${(hours.value).toFixed(1)} <br><br>Your Tax Rate: ${rate.value} <br><br>`
 
             //console.log() all four values
             
-            console.log()
-            console.log()
-            console.log()
-            console.log()
+            console.log(first,#first)
+            console.log(last,#last)
+            console.log(hours,#hours)
+            console.log(rate,#rate)
 
             //add the first and last name values together and store into a new variable called 'full' holding the user's full name
             var full 
@@ -113,7 +113,7 @@
 
 
             //create a new variable called 'finalMessage' that holds the literal string value of the following, each value on a new line (use <br>): full name, hours worked*, hourly rate*   *--> rounded to the second decimal place 
-            var finalMessage = ``
+            var finalMessage = `finalMessage`
 
         
             //create a new var called 'info' and store the entire #info *HTML element* to it
