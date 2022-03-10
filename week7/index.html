@@ -75,35 +75,40 @@
         function alertName(e)
         {
             //get each *value* from the form elements (first name, last name, hours worked, hourly rate) and store them into vars
-
+            var first = document.querySelector("#fname").value;
+            var last = document.querySelector("#lname").value;
+            var hours = document.querySelector("#hours").value;
+            var rate = document.querySelector("#rate").value;
             /*USE THE FOLLOWING VARIABLE NAMES:
             fname --> first name, #first
             lname --> last name, #last
             hours --> hours worked, #hours
             rate --> hourly rate, #rate */
-            
-            info.innerHTML = `<br> Here is the information you entered <br><br>Your First Name: ${first.value} <br><br>Your Last Name: ${(last.value).toFixed(1)} <br><br> Your Hours Worked: ${(hours.value).toFixed(1)} <br><br>Your Tax Rate: ${rate.value} <br><br>`
-
             //console.log() all four values
             
-            console.log(first,#fname)
-            console.log(last,#lname
-            console.log(hours,#hours)
-            console.log(rate,#rate)
+            console.log(first)
+            console.log(last)
+            console.log(hours)
+            console.log(rate)
+
+            var info = document.querySelector('#info')
+            info.innerHTML = `<br> Here is the information you entered <br><br>Your First Name: ${first} <br><br>Your Last Name: ${last} <br><br> Your Hours Worked: ${(Number.parseFloat(hours)).toFixed(1)} <br><br>Your Hourly Rate: ${(Number.parseFloat(rate)).toFixed(1)} <br><br>`
+
+            
 
             //add the first and last name values together and store into a new variable called 'full' holding the user's full name
-            var full = fname + lname
-
+            var full = `${first} ${last}`
             //console.log() the full name value
-            console.log(fname)
-            console.log(lname)
+            console.log(full)
+            console.log(first)
+            console.log(last)
             console.log(hours)
             console.log(rate)
 
 
             //convert both hours and rate to Number() data types
-            var hours = Number(hours)
-            var rate = Number(rate)
+            var hours = Number.parseFloat(hours)
+            var rate = Number.parseFloat(rate)
 
 
             //NOTE: DO NOT MOVE ON UNTIL YOU ARE ABLE TO DISPLAY THE CORRECT VALUES! This is a practice in testing as you build! 
@@ -111,13 +116,13 @@
             //create gross, taxAmount, net variables and store corresponding data to them
             //use a tax percentage of 20% (.2)
             var gross = hours * rate
-            var taxAmount = gross * .2
+            var taxAmount = gross * 0.2
             var net = gross - taxAmount
 
-            
+            console.log(gross, taxAmount, net,hours, rate, taxAmount)
 
             //console.log() all three processed values, rounded to the second decimal place
-            console.log(gross.toFixed(2), taxAmount.toFixed(2), net.toFixed(2))
+           // console.log(Number.parseFloat(gross)).toFixed(2), (Number.parseFloat(taxAmount)).toFixed(2), (Number.parseFloat(net)).toFixed(2)
 
 
             //create a new variable called 'finalMessage' that holds the literal string value of the following, each value on a new line (use <br>): full name, hours worked*, hourly rate*   *--> rounded to the second decimal place 
@@ -136,21 +141,21 @@
 
 
             //edit the innerHTML of the #check element (now the 'check' js var) to hold a literal string with the following values: gross pay, tax amount, net pay. All three values should be rounded to the second decimal place.  Use <br> to break onto a new line for each value
-            check.innerHTML += `Gross pay: ${gross} <br> Tax amount: ${taxAmount} <br> Net pay: ${net}`
+            check.innerHTML += `Gross pay: ${gross} <br> Tax amount: ${taxAmount.toFixed(2)} <br> Net pay: ${net}`
 
 
             //add a 'click' event listener to the #submit HTML element (HINT: this is the first step in the <script> )
             //when the #submit button is clicked, the submitNow function should run
 
         
-            document.querySelector(`#submit`).addEventListener(`click`)
+            document.querySelector(`#submit`).addEventListener(`click`, submitNow)
             function submitNow(e) {
 
 
                 /*NOTE FOR TESTING:
                     *if written correctly, you will see an alert() with all info entered as well as processed!*/
 
-                    alert(`${full}\nHOURS: ${hours}\nRATE: $${rate.toFixed(2)}\n\nGROSS PAY: $${gross.toFixed(2)}\nTAX AMOUNT: $${taxAmount.toFixed(2)}\nNET PAY: $${net.toFixed(2)}`)
+                    alert(`${full}\nHOURS: ${(hours)}\nRATE: ${(rate).toFixed(2)}\nGROSS PAY: ${(gross).toFixed(2)}\nTAX AMOUNT: ${(taxAmount).toFixed(2)}\nNET PAY: ${(net).toFixed(2)}`)
             }            
             
         }
